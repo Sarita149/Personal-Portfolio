@@ -9,6 +9,8 @@ import { AboutComponent } from './myComponents/about/about.component';
 import { WorkComponent } from './myComponents/work/work.component';
 import { ContactComponent } from './myComponents/contact/contact.component';
 import { HomeComponent } from './myComponents/home/home.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatDividerModule } from '@angular/material/divider';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { HomeComponent } from './myComponents/home/home.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MatDividerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

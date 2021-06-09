@@ -7,7 +7,7 @@
     <!-- <nav class="menu"> -->
         
         <input hidden type="checkbox" id="opensidebarmenu">
-        <label for="opensidebarmenu" class="sidebarIconToggle">
+        <label for="opensidebarmenu" class="sidebarIconToggle" #toggle>
             <div class="spinner top"></div>
             <div class="spinner middle"></div>
             <div class="spinner bottem"></div>
@@ -19,22 +19,22 @@
             </div>
             <ul class="menu-nav menu" id="menulist">
                 <li class="nav-item">
-                    <a href="" class="nav-link current">
+                    <a routerLink="" (click)="toggle.click()" class="nav-link current">
                         Home
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="about" class="nav-link">
+                    <a routerLink="about" (click)="toggle.click()"  class="nav-link">
                         About ME
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="work" class="nav-link">
+                    <a routerLink="work" (click)="toggle.click()" class="nav-link">
                         My Work
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="contact" class="nav-link">
+                    <a routerLink="contact" (click)="toggle.click()" class="nav-link">
                         Contact
                     </a>
                 </li>

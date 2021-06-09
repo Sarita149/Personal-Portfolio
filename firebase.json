@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "public": "MyPortfolio",
+    "public": "public/MyPortfolio",
     "rewrites":[
       {
         "source": "**",

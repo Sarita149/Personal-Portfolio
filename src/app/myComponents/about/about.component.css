@@ -82,6 +82,14 @@ section {
         transform: translateX(25px);
     }
 }
+@keyframes rightBounce{
+    0%,100%{
+        transform: translateX(25px);
+    }
+    50%{
+        transform: translateX(0px);
+    }
+}
 
 @keyframes spin{
     0%{
@@ -155,13 +163,14 @@ section {
 .about {
     background-color: #204051;
     opacity: 0.9;
-    height: 70vh;
+    /* height: 70vh; */
     align-items: center;
+    padding: 2rem;
 }
 
 .about p {
     font-size: 16px;
-    padding: 1rem 1rem 1rem 3rem;
+    padding: 0rem;
     text-align: left;
     line-height: 1.5;
 }
@@ -242,6 +251,8 @@ section {
     color:#1b1ba9;
     top: -18px;
     right: -45px;
+    transition: 0.4s linear;
+    /* line-height: 30px; */
 }
 .percentone{
     border: 2px solid #ff2f74;
@@ -252,6 +263,7 @@ section {
 .percentthree{
     border: 2px solid #fff666;
 }
+
 #third-sec .container>div h1 {
     padding: 0;
     margin: 0;
@@ -259,23 +271,64 @@ section {
     font-size: 5rem;
     font-weight: 700;
 }
-
+.java,.c,.cpp{
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border: 2px solid red;
+    border-radius: 50px;
+    padding: 5px;
+    color:#1b1ba9;
+    top: -18px;
+    right: -45px;
+    transition: 0.4s linear;
+    /* line-height: 30px; */
+}
+.java{
+    border: 2px solid #61fa08;
+}
+.c{
+    border: 2px solid #cc7dc8;
+}
+.cpp{
+    border: 2px solid #2fffcb;
+}
 .skills:hover{
     transform: translateY(-10px);
     box-shadow: 0px 15px 35px rgba(0, 0, 0, .5);
 }
-
-
+.skills:hover .percentone{
+    box-shadow: 0px 0px 10px 5px #ff2f74;
+}
+.skills:hover .percenttwo{
+    box-shadow: 0px 0px 10px 5px #2f60ff;
+}
+.skills:hover .percentthree{
+    box-shadow: 0px 0px 10px 5px #fff666;
+}
+.skills:hover .java{
+    box-shadow: 0px 0px 10px 5px #61fa08;
+}
+.skills:hover .c{
+    box-shadow: 0px 0px 10px 5px #cc7dc8;
+}
+.skills:hover .cpp{
+    box-shadow: 0px 0px 10px 5px #2fffcb;
+}
 .skill-type{
     display: flex;
     justify-content: center;
     text-align: left;
 }
 .skill-type h1{
-    color: #000;
+    color: #333;
     margin: .5rem;
     padding: 1rem;
-    border-left: 5px solid #000;
+    border-left: 5px solid #333;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    line-height: 1;
 
 }
 /*---------------------------------------------section-4rth--------------------------------------- */
@@ -296,21 +349,25 @@ section {
     position: relative;
     margin: 1rem;
     width: 400px;
-    height: 300px;
+    align-items: center;
+    /* min-height:600px; */
     /* background-color: red; */
 }
 .box{
-    position: absolute;
+    position: relative;
     width:100%;
-    height: 100%;
+    height: 400px;
     background: transparent;
     border-bottom : 1px solid #000 ;
     /* border-left : 1px solid #000 ; */
     display: flex;
+    align-items: left
 }
 .box .skill{
     position: relative;
-    flex: 1;
+    /* flex-direction: row; */
+    flex-shrink:1;
+    flex-basis: 100px;
     text-align: center;
 }
 .box .skill .graph{
@@ -351,9 +408,56 @@ section {
 }
 .box .skill .name{
     position: absolute;
-     
+     bottom: -40px;
+     left: 50%;
+     transform: translateX(-50%);
+     text-align: center;
+     color: #000;
+     /* background: #001e8a; */
+     padding: 2px 6px;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     /* font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
+     font-family: poppins;
+     font-weight: 600;
+
+}
+.box .skill .name .square-div{
+    height: 30px;
+    width: 30px; 
+    background-color: #2fffcb;
+}
+#four-sec .skill-type{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    margin-top: 4rem;
+    /* text-align: left; */
+}
+.Angular{
+    animation: leftBounce 7s ease-in-out  infinite;
+}
+.boot{
+    animation: rightBounce 7s ease-in-out infinite;
+}
+/* .graph{
+
+    animation: nod 7s ease-in-out;
 }
 
+@keyframes nod {
+    0%{
+        transform: translateX(0);
+        opacity: 0.3;
+    }
+    50%{
+        transform: translateX(0,0px);
+    }
+    100%{
+        opacity: 0.00;
+    }
+} */
 /*---------------------------------------------------------- Media Query --------------------------------------------------- */
 
 /* small screen */

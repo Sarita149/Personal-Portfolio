@@ -248,17 +248,17 @@ main::before {
     border-radius: 50%;
 
 }
-.about-content2{
+/* .about-content{
     position: absolute;
     width: 500px;
     height: 500px;
     top: -28%;
-    right:2%;
+    right:2%; */
     /* background-color: #fff; */
-    display: flex;
+    /* display: flex;
     justify-content: center;
     text-align: right;
-}
+} */
 .about-content p{
     padding: 1rem;
     background-color: #18293c;

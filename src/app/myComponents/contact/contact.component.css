@@ -19,6 +19,7 @@ main {
     overflow-x: hidden;
     -webkit-top-highlight-color: transparent;
     padding: 5vh 5rem;
+    z-index: -1;
 }
 
 section {
@@ -73,14 +74,17 @@ section {
     height: 100%;
     width: 0%;
     background-color: #eece1a;
-    z-index: -1;
+    z-index: 1;
+    opacity: 0.7;
     transition: width 0.3s ease;
 }
 .btn:hover::before{
     width: 100%;
+    /* color: #000; */
 }
-.btn:hover a{
-    color: #eece1a;
+.btn:hover{
+    /* color: #eece1a; */
+    color: #fff;
 }
 .contact-info,.contact-form{
     width: 50%;
@@ -146,7 +150,7 @@ section {
 
 
 
-/* main::before {
+main::before {
     content: '';
     position: fixed;
     left: 0;
@@ -156,4 +160,23 @@ section {
     background-color: #cddc39;
     z-index: -1;
     opacity: 0.12;
-} */
+}
+
+
+/* -----------------------------MEdia Query-------------------------- */
+@media (max-width:991px) {
+    
+}
+@media (max-width:767px) {
+    .contact-form,.contact-info{
+        width: 100%;
+    }
+    .contact-info{
+        order: -1;
+        margin-bottom: 15px;
+    }
+}
+
+@media (max-width:575px) {
+    
+}
