@@ -1,0 +1,256 @@
+header {
+    position: fixed;
+    z-index: 3;
+    width: 100%;
+}
+
+/* .menu{
+    /* position: fixed;
+    top: 0;
+    width: 100%;
+    opacity: 0.9;
+    visibility: hidden; 
+} */
+
+.sidebarIconToggle {
+    /* background-color: #fff; */
+    width: 22px;
+    height: 22px;
+    position: absolute;
+    z-index: 3;
+    top: 35px;
+    right: 35px;
+    cursor: pointer;
+}
+
+#sidebarmenu {
+    top: 0;
+    width: 100%;
+    opacity: 0.9;
+}
+
+.menu-branding, .menu-nav {
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    justify-content: center;
+    float: left;
+    width: 50%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/*------------------------------- menu list side------------------- */
+
+.menu-nav {
+    margin: 0;
+    padding: 0;
+    background: rgba(20, 20, 20, 1.5);
+    list-style: none;
+    /* slide in from top */
+    transform: translate3d(0, -100%, 0);
+    transition: all 0.5s ease-out;
+}
+
+#opensidebarmenu:checked~#sidebarmenu .menu-nav {
+    /* visibility: visible; */
+    transform: translate3d(0, 0, 0);
+}
+
+/* ------------------------branding side ----------------------------- */
+
+.menu-branding {
+    background: rgba(37, 37, 37, 0.8);
+    /* slide in from bottem */
+    transform: translate3d(0, 100%, 0);
+    transition: all 0.5s ease-out;
+}
+
+#opensidebarmenu:checked~#sidebarmenu .menu-branding {
+    /* visibility: visible; */
+    transform: translate3d(0, 0, 0);
+}
+
+.portrait {
+    position: absolute;
+    width: 250px;
+    height: 300px;
+    background-image: url('../../../assets/portfolio_DP.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    z-index: 4;
+    /* border-radius: 50%;
+    border: solid 3px #eece1a; */
+}
+
+.portrait::before {
+    position: absolute;
+    content: '';
+    top: -38px;
+    right: 38px;
+    border: 10px solid #eece1a;
+    width: 100%;
+    height: 100%;
+    z-index: 5;
+    /* background: #fff; */
+    /* transform: skew(2deg,2deg); */
+    /* z-index: 4; */
+}
+
+/* --------------- menu nav items------------ */
+
+.nav-item {
+    display: inline-block;
+    position: relative;
+    font-size: 30px;
+    text-transform: uppercase;
+    margin: 1rem 0;
+    font-weight: 500;
+    color: #fff;
+    text-decoration: none;
+    transform: translate3d(600px, 0, 0);
+    transition: all 0.5s ease-out;
+}
+
+.nav-item a::after {
+    content: '';
+    position: absolute;
+    background-color: #eece1a;
+    height: 3px;
+    width: 0;
+    left: 0;
+    bottom: -1px;
+    transition: 0.5s;
+}
+
+.nav-item a:hover {
+    color: #fff;
+}
+
+.nav-item a:hover::after {
+    width: 100%;
+}
+
+a:focus {
+    color: #eece1a;
+}
+
+/* //Delay each nav item inside by 0.1s */
+
+.nav-item:nth-child(1) {
+    transition-delay: 0.1s;
+}
+
+.nav-item:nth-child(2) {
+    transition-delay: 0.2s;
+}
+
+.nav-item:nth-child(3) {
+    transition-delay: 0.3s;
+}
+
+.nav-item:nth-child(4) {
+    transition-delay: 0.4s;
+}
+
+#opensidebarmenu:checked~#sidebarmenu .menu-nav .nav-item {
+    /* slide in from right */
+    transform: translate3d(0, 0, 0);
+}
+
+/* --------------------Toggle button ------------------------- */
+
+.spinner {
+    height: 3px;
+    background-color: #eece1a;
+    transition: all 0.3s;
+}
+
+.spinner.middle, .spinner.bottem {
+    margin-top: 5px;
+}
+
+#opensidebarmenu:checked~.sidebarIconToggle>.spinner.middle {
+    opacity: 0;
+}
+
+#opensidebarmenu:checked~.sidebarIconToggle>.spinner.top {
+    transform: rotate(130deg);
+    margin-top: 8px;
+}
+
+#opensidebarmenu:checked~.sidebarIconToggle>.spinner.bottem {
+    transform: rotate(-130deg);
+    margin-top: -10px;
+}
+
+a {
+    color: #fff;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/*---------------------------------------------------------- Media Query --------------------------------------------------- */
+
+/* small screen */
+
+@media screen and (max-width:500px) {}
+
+/* medium screen */
+
+@media screen and (max-width:768px) {
+    ul.menu-nav, div.menu-branding {
+        float: none;
+        width: 100%;
+        min-height: 0;
+    }
+    /*------------------------------- menu list side------------------- */
+    .menu-nav {
+        /* slide in from top */
+        height: 75vh;
+        font-size: 24px;
+        transform: translate3d(100%, 0, 0);
+        transition: all 0.5s ease-out;
+    }
+    #opensidebarmenu:checked~#sidebarmenu .menu-nav {
+        /* visibility: visible; */
+        transform: translate3d(0, 0, 0);
+    }
+    /* ------------------------branding side ----------------------------- */
+    .menu-branding {
+        height: 25vh;
+        /* slide in from bottem */
+        transform: translate3d(-100%, 0, 0);
+        transition: all 0.5s ease-out;
+    }
+    #opensidebarmenu:checked~#sidebarmenu .menu-branding {
+        /* visibility: visible; */
+        transform: translate3d(0, 0, 0);
+    }
+    .portrait {
+        width: 100px;
+        height: 100px;
+        background-image: url('../../../assets/dp.jpg');
+        background-position-y: -20px;
+        background-position-x: center;
+        z-index: 4;
+        border-radius: 50%;
+        border-top: solid 1px transparent;
+        border-left: solid 0px transparent;
+        border-bottom: solid 10px #eece1a;
+        border-right: solid 10px #eece1a;
+        cursor: pointer;
+    }
+    .portrait::before {
+        display: none;
+    }
+}
+
+/* large screen */
+
+@media screen and (min-width:769px) and (max-width:1170px) {}
+
+/* Extra large screen */
+
+@media screen and (min-width:1171px) {}
