@@ -30,9 +30,11 @@ h1,h2,h3{
 }
 .lg-heading{
     font-size: 6rem;
+    color: #fff;
 }
 .sm-heading{
     margin-bottom: 2rem;
+    color: #fff;
     padding: 0.2rem 1rem;
     background: rgba(rgb(163, 161, 161),0.5);
 }

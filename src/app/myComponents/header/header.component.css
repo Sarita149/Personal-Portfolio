@@ -132,7 +132,11 @@ header {
     width: 100%;
 }
 
-a:focus {
+.current{
+    color: #eece1a;
+}
+
+a:focus{
     color: #eece1a;
 }
 
