@@ -1,44 +1,42 @@
 <header>
-    <!-- <div class="menu-btn">
-        <div class="div-line"></div>
-        <div class="div-line"></div>
-        <div class="div-line"></div>
-    </div> -->
-    <!-- <nav class="menu"> -->
-        
-        <input hidden type="checkbox" id="opensidebarmenu">
-        <label for="opensidebarmenu" class="sidebarIconToggle" #toggle>
-            <div class="spinner top"></div>
-            <div class="spinner middle"></div>
-            <div class="spinner bottem"></div>
-        </label>
-        <div id="sidebarmenu">
-            <div class="menu-branding borders">
-                <div class="portrait">
-                </div>
+    <input hidden type="checkbox" id="opensidebarmenu" aria-label="Toggle navigation menu">
+    <label for="opensidebarmenu" class="sidebarIconToggle" role="button" aria-controls="sidebarmenu" #toggle>
+        <span class="spinner top" aria-hidden="true"></span>
+        <span class="spinner middle" aria-hidden="true"></span>
+        <span class="spinner bottom" aria-hidden="true"></span>
+    </label>
+    <div id="sidebarmenu">
+        <div class="menu-branding borders">
+            <div class="portrait" aria-hidden="true">
             </div>
-            <ul class="menu-nav menu" id="menulist">
-                <li class="nav-item">
-                    <a routerLink="" (click)="toggle.click()" class="nav-link current">
-                        Home
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a routerLink="about" (click)="toggle.click()"  class="nav-link">
-                        About ME
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a routerLink="work" (click)="toggle.click()" class="nav-link">
-                        My Work
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a routerLink="contact" (click)="toggle.click()" class="nav-link">
-                        Contact
-                    </a>
-                </li>
-            </ul>
         </div>
-    <!-- </nav> -->
+        <ul class="menu-nav menu" id="menulist">
+            <li class="nav-item">
+                <a routerLink="" routerLinkActive="current" [routerLinkActiveOptions]="{ exact: true }"
+                    (click)="toggle.click()" class="nav-link">
+                    Home
+                </a>
+            </li>
+            <li class="nav-item">
+                <a routerLink="about" routerLinkActive="current" (click)="toggle.click()" class="nav-link">
+                    About Me
+                </a>
+            </li>
+            <li class="nav-item">
+                <a routerLink="work" routerLinkActive="current" (click)="toggle.click()" class="nav-link">
+                    My Work
+                </a>
+            </li>
+            <li class="nav-item">
+                <a routerLink="projects" routerLinkActive="current" (click)="toggle.click()" class="nav-link">
+                    Projects
+                </a>
+            </li>
+            <li class="nav-item">
+                <a routerLink="contact" routerLinkActive="current" (click)="toggle.click()" class="nav-link">
+                    Contact
+                </a>
+            </li>
+        </ul>
+    </div>
 </header>

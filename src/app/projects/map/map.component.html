@@ -1,0 +1,81 @@
+<mat-card class="project-card map-card" id="map-project">
+    <div class="project-grid">
+        <div class="project-shot map-shot" aria-label="Map screenshot placeholder">
+            <div class="road road-one"></div>
+            <div class="road road-two"></div>
+            <div class="pin pin-one"></div>
+            <div class="pin pin-two"></div>
+            <div class="pin pin-three"></div>
+        </div>
+
+        <div class="project-copy">
+            <p class="project-kicker">Map Integration</p>
+            <mat-card-title>Location Explorer</mat-card-title>
+            <mat-card-subtitle>Angular Google Maps, static coordinates, info windows</mat-card-subtitle>
+            <p>
+                A map-focused Angular component with multiple markers, selected marker state,
+                and reusable static location data.
+            </p>
+            <div class="tags" aria-label="Technology stack">
+                <span>Angular</span>
+                <span>Google Maps</span>
+                <span>Material UI</span>
+            </div>
+            <button mat-flat-button color="accent" type="button" (click)="scrollToDemo()">
+                {{ mapReady ? 'Open Live Map' : 'Preview Map UI' }}
+            </button>
+            <p class="project-note" *ngIf="!mapReady">
+                A real Google map appears here after a Google Maps API key is configured.
+            </p>
+        </div>
+    </div>
+
+    <section
+        #mapDemo
+        id="map-demo"
+        class="map-demo"
+        [class.demo-highlighted]="demoHighlighted"
+        tabindex="-1">
+        <google-map *ngIf="mapReady; else fallbackMap" height="430px" width="100%" [center]="center" [zoom]="zoom"
+            [options]="mapOptions">
+            <map-marker
+                #markerRef="mapMarker"
+                *ngFor="let location of locations"
+                [position]="location.position"
+                [label]="location.label"
+                [title]="location.title"
+                (mapClick)="openInfo(location, markerRef)">
+            </map-marker>
+
+            <map-info-window>
+                <strong>{{ selectedLocation?.title }}</strong>
+                <p>{{ selectedLocation?.description }}</p>
+            </map-info-window>
+        </google-map>
+
+        <ng-template #fallbackMap>
+            <div class="fallback-map" role="group" aria-label="Interactive map preview">
+                <div class="fallback-status">Preview mode</div>
+                <div class="road road-one"></div>
+                <div class="road road-two"></div>
+                <button
+                    *ngFor="let location of locations"
+                    type="button"
+                    class="preview-pin"
+                    [class.active]="selectedLocation === location"
+                    [style.left.%]="location.preview.left"
+                    [style.top.%]="location.preview.top"
+                    (click)="selectPreviewLocation(location)"
+                    [attr.aria-label]="location.title">
+                    {{ location.label }}
+                </button>
+                <div class="preview-info">
+                    <strong>{{ selectedLocation?.title }}</strong>
+                    <p>{{ selectedLocation?.description }}</p>
+                    <span *ngIf="!mapLoadFailed">Google Maps API key is not configured, so this is an interactive UI preview.</span>
+                    <span *ngIf="mapLoadFailed">Google Maps could not be loaded. Showing the local preview instead.</span>
+                </div>
+            </div>
+        </ng-template>
+    </section>
+</mat-card>

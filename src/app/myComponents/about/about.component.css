@@ -187,12 +187,9 @@ section {
     width: 100%;
 }
 .progress-row{
-    /* position: relative; */
-    /* margin: 1rem; */
-    /* width: 100%; */
     display: flex;
     flex-direction: column;
-    align-items: left;
+    align-items: flex-start;
 }
 .skils-heading{
     justify-content: center;
@@ -238,17 +235,17 @@ section {
 .progressone{
     background:#ff2f74;
     box-shadow: 0px 0px 10px 5px #ff2f74;
-    width: 80%;
+    width: 90%;
 }
 .progresstwo{
     background:#2f60ff;
     box-shadow: 0px 0px 10px 5px #2f60ff ;
-    width: 70%;
+    width: 85%;
 }
 .progressthree{
     background:#fff666;
     box-shadow: 0px 0px 10px 5px #fff666 ;
-    width: 65%;
+    width: 85%;
 }
 .percentone,.percenttwo,.percentthree{
     position: absolute;
@@ -368,9 +365,8 @@ section {
     height: 400px;
     background: transparent;
     border-bottom : 1px solid #000 ;
-    /* border-left : 1px solid #000 ; */
     display: flex;
-    align-items: left
+    align-items: flex-start;
 }
 .box .skill{
     position: relative;

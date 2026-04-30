@@ -1,0 +1,56 @@
+<mat-card class="project-card" id="dashboard-project">
+    <div class="project-grid">
+        <div class="project-shot dashboard-shot" aria-label="Dashboard screenshot placeholder">
+            <div class="shot-topbar"></div>
+            <div class="shot-stat"></div>
+            <div class="shot-stat small"></div>
+            <div class="shot-chart"></div>
+            <div class="shot-chart alt"></div>
+        </div>
+
+        <div class="project-copy">
+            <p class="project-kicker">Analytics Dashboard</p>
+            <mat-card-title>Frontend Metrics Dashboard</mat-card-title>
+            <mat-card-subtitle>Angular, Angular Material, Highcharts</mat-card-subtitle>
+            <p>
+                A responsive analytics view with reusable chart setup, static mock business data,
+                KPI cards, and chart lifecycle cleanup.
+            </p>
+            <div class="tags" aria-label="Technology stack">
+                <span>Angular</span>
+                <span>Highcharts</span>
+                <span>Material UI</span>
+            </div>
+            <button mat-flat-button color="accent" type="button" (click)="scrollToDemo()">
+                View Charts
+            </button>
+        </div>
+    </div>
+
+    <section
+        #dashboardDemo
+        id="dashboard-demo"
+        class="dashboard-demo"
+        [class.demo-highlighted]="demoHighlighted"
+        tabindex="-1">
+        <div class="metric-grid">
+            <div class="metric" *ngFor="let metric of metrics">
+                <span>{{ metric.label }}</span>
+                <strong>{{ metric.value }}</strong>
+                <em>{{ metric.trend }}</em>
+            </div>
+        </div>
+
+        <div class="chart-grid">
+            <mat-card class="chart-card">
+                <div #lineChart class="chart"></div>
+            </mat-card>
+            <mat-card class="chart-card">
+                <div #barChart class="chart"></div>
+            </mat-card>
+            <mat-card class="chart-card chart-card-wide">
+                <div #pieChart class="chart"></div>
+            </mat-card>
+        </div>
+    </section>
+</mat-card>

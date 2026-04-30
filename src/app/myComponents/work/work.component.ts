@@ -11,7 +11,7 @@ export class WorkComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    AOS.init()
+    AOS.init();
   }
 
 }

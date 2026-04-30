@@ -1,11 +1,26 @@
-/* You can add global styles to this file, and also import other style files */
-body{
-    /* background: #444; */
-    /* color: #fff; */
-    margin: 0;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    line-height: 1.5;
-    /* height: 100vh; */
+:root {
+    --portfolio-dark: #18293c;
+    --portfolio-accent: #eece1a;
+    --portfolio-pink: #e02f6b;
+    --backdrop-filter-blur: blur(5px);
 }
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    min-height: 100%;
+}
+
+body {
+    margin: 0;
+    color: var(--portfolio-dark);
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    line-height: 1.5;
+}
+
+img {
+    max-width: 100%;
+}

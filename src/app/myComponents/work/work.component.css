@@ -197,7 +197,7 @@ main::before {
     display: flex;
     flex-direction: row;
 }
-.container #div:nth-child(odd){
+.container .work-row:nth-child(odd){
     /* background-color: seashell; */
     display: flex;
     justify-content: flex-end;
@@ -312,11 +312,30 @@ main::before {
     z-index: -1;
     transition: width 0.3s ease;
 }
-.btn:hover::before{
+.btn:hover::before,
+.btn:focus::before {
     width: 100%;
 }
-.btn:hover a{
+.btn:hover,
+.btn:focus {
+    color: #fff;
+}
+.btn-static {
+    cursor: default;
+}
+.btn-static:hover,
+.btn-static:focus {
     color: #e02f6b;
+}
+.btn-static::before {
+    display: none;
+}
+.btn:disabled {
+    cursor: not-allowed;
+    opacity: 0.65;
+}
+.btn:disabled::before {
+    display: none;
 }
 
 

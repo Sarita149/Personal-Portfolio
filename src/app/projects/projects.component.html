@@ -1,0 +1,20 @@
+<main class="projects-shell">
+    <aside class="projects-nav" aria-label="Projects navigation">
+        <button type="button" (click)="scrollToProject('dashboard-project')">Dashboard</button>
+        <button type="button" (click)="scrollToProject('map-project')">Map</button>
+    </aside>
+
+    <section class="projects-content">
+        <div class="projects-hero">
+            <p class="eyebrow">Frontend Case Studies</p>
+            <h1>Projects</h1>
+            <p>
+                Real-world Angular examples showing dashboard development, data visualization,
+                and map-based interfaces with clean component boundaries.
+            </p>
+        </div>
+
+        <app-dashboard></app-dashboard>
+        <app-map></app-map>
+    </section>
+</main>
